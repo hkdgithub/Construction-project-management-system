@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>投标添加</title>
+		<style>
+			div{color: white;}
+			div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+            }
+		</style>
+	</head>
+	<body background="image/背景.jpg">
+		<div>
+		<form action="/bidAdd" method="get">
+		工程名称:<input name="projectName" type="text" /><br/>
+		企业名程:<input name="companyName" type="text" /><br/>
+		投标信息如下：<br />
+		预算报价(万元):<input name="budgetQuotation" type="text" /><br />
+		投标报价(万元):<input name="tenderOffer" type="text" /><br />
+		    定期工额(天):<input name="regularWorkWell" type="text" /><br />
+		    投标工期(天):<input name="biddingPeriod" type="text"/>  <br />
+		    <input value="确定" type="submit" />
+		</form>  
+		
+		<p align="center">
+		<a th:href="@{'/returnBidManage'}">返回投标管理界面</a>
+		</p>
+		
+		</div>
+	</body>
+</html>

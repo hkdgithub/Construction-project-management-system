@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>主窗口</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+			div{color: white;}
+	</style>		
+</head>
+
+	
+
+<body background="image/背景.jpg">
+		<div align="center">
+		<h1><a th:href="@{'/userManage'}">用户管理</a></h1>
+		<br />
+		<h1><a th:href="@{'/projectManage'}">工程管理</a></h1>
+		<br />
+		<h1><a th:href="@{'/companyManage'}">企业管理</a></h1>
+		<br />
+		<h1><a th:href="@{'/bidManage'}">投标管理</a></h1>
+		<br />
+		<h1><a th:href="@{'/returnLogin'}">返回登陆界面</a></h1>
+		</div>
+</body>
+ 
+</html>

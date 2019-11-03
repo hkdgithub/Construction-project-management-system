@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>工程管理</title>
+		<style>
+			div{color: white;}
+			div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+            }
+		</style>
+	</head>
+	<body background="image/背景.jpg">
+		<div>
+		  <h3 align="center">工程管理界面</h3>
+		  <!-- 工程查询 -->
+		  <form action="projectQuery" method="get">
+          <input type="submit" value="工程查询" />
+          </form>
+          <!-- 工程添加 -->
+		  <h1><a th:href="@{'/projectManageAdd'}">工程添加</a></h1>
+		  <!-- 工程修改 -->
+		  <h1><a th:href="@{'/projectManageUpdate'}">工程修改</a></h1>
+		  <!-- 工程删除 -->
+		  <h1><a th:href="@{'/projectManageDelete'}">工程删除</a></h1>  	
+		  <!-- 返回主窗口 -->
+	      <h1><a th:href="@{'/returnMainWindow'}">返回主窗口</a></h1>
+		</div>
+	</body>
+		
+		
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>工程查询界面</title>
+		<style>
+			#userManage{color: white;}
+			div{color: white;}
+		</style>
+	</head>
+	<body background="image/背景.jpg">
+	<div> 
+	<p align="center">工程查询界面</p>
+	<form action="/projectQuery">
+	<p align="center"><input value="工程查询" type="submit" /></p>
+	</form>
+	
+		<table border="1" withd="200px" align="center">		
+			<tr>			   
+				<td width="200px">工程编号</td>	
+				<td width="200px">工程名称</td>
+				<td width="200px">报建申请单位</td>	
+				<td width="200px">所有制性质</td>	
+				<td width="200px">建设单位电话</td>
+				<td width="200px">工程状态</td>			
+			</tr>		
+			<tr th:each="c:${list}">
+				<td th:text="${c.prid}"></td>	
+				<td th:text="${c.prmc}"></td>
+				<td th:text="${c.sqdw}"></td>	
+				<td th:text="${c.ssxz}"></td>	
+				<td th:text="${c.phone}"></td>	
+				<td th:text="${c.przt}"></td>		
+			</tr>			
+</table>
+    
+    <p align="center">
+    <a th:href="@{/projectQuery(start=0)}">[首页]</a>
+	<a th:href="@{/projectQuery(start=${page.pageNum-1})}">[上一页]</a>
+	<a th:href="@{/projectQuery(start=${page.pageNum+1})}">[下一页]</a>      
+	<a th:href="@{/projectQuery(start=${page.pages})}">[尾页]</a>
+	</p> 
+	    <p align="center">
+	    显示第一到最后一条，共<nobr th:text="${page.pages}"></nobr>页
+	    </p>
+	    <p align="center"><a th:href="@{'/userManage'}"><input type="button" value="返回用户管理界面"/></a></p>
+	    
+	</div>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>工程删除</title>
+		<style>
+			#userManage{color: white;}
+			div{color: white;}
+			div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+   }
+		</style>
+	</head>
+	<body background="image/背景.jpg">
+	<div> 
+	<h3 align="center">工程删除界面</h3>
+	<br/>
+	   
+	  <form action="/projectDelete">                                    
+	      请输入要删除的工程编号：<input name="projectId" type="text"/><br/>
+	       <p align="center">
+	      <input value="确认" type="submit"/> 
+	       </p>
+	  </form>
+      <br/>
+       
+	    <p align="center">
+		<a th:href="@{'/returnprojectManage'}">返回项目管理界面</a>
+		</p>
+     </div>
+	</body>
+</html>

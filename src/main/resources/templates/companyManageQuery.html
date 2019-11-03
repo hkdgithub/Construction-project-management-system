@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>企业查询界面</title>
+		<style>
+			#userManage{color: white;}
+			div{color: white;}
+		</style>
+	</head>
+	<body background="image/背景.jpg">
+	<div> 
+	<p align="center">企业查询界面</p>
+	
+	<form action="/companyQuery">
+	<p align="center"><input value="企业查询" type="submit" /></p>
+	</form>
+	
+		<table border="1" withd="200px" align="center">		
+			<tr>			   
+				<td width="200px">企业编号</td>	
+				<td width="200px">企业名称</td>	
+			</tr>
+					
+			<tr th:each="c:${list}">
+				<td th:text="${c.qyid}"></td>	
+				<td th:text="${c.qymc}"></td>		
+			</tr>			
+        </table>
+    	
+    <p align="center">
+    <a th:href="@{/companyQuery(start=0)}">[首页]</a>
+	<a th:href="@{/companyQuery(start=${page.pageNum-1})}">[上一页]</a>
+	<a th:href="@{/companyQuery(start=${page.pageNum+1})}">[下一页]</a>      
+	<a th:href="@{/companyQuery(start=${page.pages})}">[尾页]</a>
+	</p> 
+	    <p align="center">
+	    显示第一到最后一条，共<nobr th:text="${page.pages}"></nobr>页
+	    </p>
+	    <p align="center"><a th:href="@{'/companyManage'}"><input type="button" value="返回企业管理界面"/></a></p>
+	    
+	</div>
+	</body>
+</html>

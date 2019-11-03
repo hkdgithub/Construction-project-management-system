@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>登录页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<style>
+div{color: white;}
+div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+   }
+</style>
+<!-- /^[a-zA-Z]{1,}[a-zA-Z0-9]{6,10}$/ -->
+<script>
+function Fromat(){
+	var userName=form1.userName.value;
+	var passWord=form1.passWord.value;
+	var userNameFormat=/^[0-9]*$/;
+	var passWordFormat=/^[0-9]*$/;
+	
+	if(userName==null||userName==""||!userNameFormat.test(userName)){
+		alert("用户名不为空或账号格式错误");
+	}
+	else if(passWord==null||passWord==""||!passWordFormat.test(passWord)){
+		alert("密码不为空或密码格式错误！密码的格式:字母、数字或特殊字符组成，必须包含列出特殊字符(!@#$%*)，且不少于 6 个字符长");
+	}	
+
+}
+</script>
+
+</head>
+<body background="image/背景.jpg">
+<div>
+  <h3  align="center">建设工程监管信息系统</h3>
+  <br/>
+     <form action="/login " method="get" name="form1">
+     <table border="1" >
+     <tr>
+     <td width="100px">用户名：</td>
+     <td width="150px"><input name="userName"  type="text" placeholder="请输入用户名"/></td>
+     </tr>
+     <tr>
+     <td width="100px">密码：</td>
+     <td width="150px"><input name="passWord" type="password" placeholder="请输入密码"/></td>
+     </tr>
+     </table>
+     <p align="center"><input type="submit" value="登录" onclick="Fromat()"/></p>
+     <!-- 显示错误信息 -->
+     <p align="center" th:text="${name}"></p>
+         <br/>
+         <p aligin="center">如果没有账号点击该处<a th:href="@{'/register'}">注册</a></p>
+   
+         
+     </form>
+</div>
+</body>
+
+</html>

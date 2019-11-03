@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>企业删除</title>
+		<style>
+			#userManage{color: white;}
+			div{color: white;}
+			div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+   }
+		</style>
+	</head>
+	<body background="image/背景.jpg">
+	<div> 
+	<h3 align="center">企业删除界面</h3>
+	<br/>
+	   
+	  <form action="/companyDelete">                                    
+	      请输入要删除的企业编号：<input name="companyId" type="text"/><br/>
+	       <p align="center">
+	      <input value="确认" type="submit"/> 
+	       </p>
+	  </form>
+      <br/>
+       
+	    <p align="center">
+		<a th:href="@{'/returnCompanyManage'}">返回企业管理界面</a>
+		</p>
+     </div>
+	</body>
+</html>

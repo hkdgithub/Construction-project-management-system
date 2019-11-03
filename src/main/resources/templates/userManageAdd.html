@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>用户添加</title>
+		<style>
+			div{color: white;}
+			div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+   }
+		</style>
+		<script>
+		function passWordTest(){
+		var userName=form3.userName.value;
+		var userPassWord=form3.userPassword.value;
+		var affirmPassWord=form3.affirmPassword.value;
+		var userNameFromat=/^[0-9]*$/;
+		if(userName==""||userName==null||!userNameFromat.test(userName)){
+			confirm("账号格式不正确，请重新输入");
+			}
+		else if(userPassWord!=affirmPassWord){
+			confirm("两次输入的密码不一致，请重新输入");
+		}
+		}
+		
+		</script>
+	</head>	
+	<body background="image/背景.jpg" id="userAdd">
+		<div>
+		<h3 align="center">用户添加界面</h3>
+			<form action="/userAdd" method="get" name="form3">
+		用户姓名：<input name="userName" type="text"/><br />
+		用户密码：<input name="userPassword" type="password"/><br />
+		确认密码：<input name="affirmPassword" type="password"/><br />
+		所属部门：<input name="dept" type="text"/><br/>
+		         
+		      <!--按确认后，会添加信息，然后返回用户管理-->
+		    <p align="center"><input type="submit" value="确认" onclick="passWordTest()"/></p>
+			</form>
+		    <p align="center"><a th:href="@{'/userManage'}"><input type="button" value="关闭"/></a></p>
+		</div>     
+	</body>
+</html>

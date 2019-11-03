@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>企业管理</title>
+		<style>
+			div{color: white;}
+			div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+            }
+		</style>
+	</head>
+	<body background="image/背景.jpg">
+		<div>
+		  <h3 align="center">企业管理界面</h3>
+		  <!-- 企业查询 -->
+		  <form action="companyQuery" method="get">
+          <input type="submit" value="企业查询" />
+          </form>
+          <!-- 企业添加 -->
+		  <h1><a th:href="@{'/companyManageAdd'}">企业添加</a></h1>
+		  <!-- 企业修改 -->
+		  <h1><a th:href="@{'/companyManageUpdate'}">企业修改</a></h1>
+		  <!-- 企业删除 -->
+		  <h1><a th:href="@{'/companyManageDelete'}">企业删除</a></h1>
+		  <!-- 企业导出 -->
+		  <h1><a th:href="@{'/companyManageExport'}">企业导出</a></h1>		  	
+		  <!-- 返回主窗口 -->
+	      <h1><a th:href="@{'/returnMainWindow'}">返回主窗口</a></h1>
+		</div>
+	</body>
+		
+		
+</html>

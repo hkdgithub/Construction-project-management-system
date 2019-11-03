@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>用户修改</title>
+		<style>
+			div{color: white;}
+			div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+   }
+		</style>	
+	</head>	
+	
+	<body background="image/背景.jpg" id="userAdd">
+		<div>
+		
+		<h3 align="center">用户修改界面</h3>
+		
+		<form action="/userUpdate" method="get">
+		请输入要修改的用户：<input name="userName" type="text"/>
+		<br />
+		请输入下面需要修改的项:<br/>
+		用户密码：<input name="userPassword" type="password"/><br />
+		所属部门：<input name="dept" type="text"/><br/>
+		    <p align="center"><input type="submit" value="确认"/></p>
+			</form>
+		    <p align="center"><a th:href="@{'/userManage'}"><input type="button" value="返回用户管理界面"/></a></p>
+		</div>     
+	</body>
+</html>

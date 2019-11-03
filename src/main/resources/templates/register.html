@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>注册页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+div{color: white;}
+div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);   }
+</style>
+
+<script>
+function Fromat1(){
+	//取值
+	var userName=form2.userName.value;
+	var passWord=form2.passWord.value;
+	var dept=form2.dept.value;
+	//正则表达式
+	var userNameFromat=/^[0-9]*$/;
+	var passWordFromat=/^[0-9]*$/;
+	var deptFromat=/^[0-9]*$/;
+	//格式判断
+	if(userName==""||(userName==null)||(!userNameFromat.test(userName)))
+		confirm("账号格式不正确");
+	else if(passWord==""||(passWord==null)||(!passWordFromat.test(passWord)))
+		confirm("密码格式不正确");
+	else if(dept==""||(dept==null)||(!deptFromat.test(dept)))
+	    comfirm("部门格式不正确");
+
+}
+</script>
+</head>
+<body background="image/背景.jpg">
+<div>
+ <p align="center">请输入以下信息，以完成注册</p>
+     <form action="/registerAdd" method="get" name="form2">
+     <table border="1">
+     
+     <tr>
+     <td width="100px">用户名：</td>
+     <td width="150px"><input name="userName"  type="text" placeholder="请输入用户名"/></td>
+     </tr>
+     
+     <tr>
+      <td width="100px">密码：</td>
+     <td width="150px"><input name="passWord" type="password" placeholder="请输入密码"/></td>
+     </tr>
+     
+     <tr>
+     <td width="100px">部门名称：</td>
+     <td width="150px"><input name="dept" type="text" placeholder="请输入部门名称"/></td>
+     </tr>
+     
+     </table>
+     <p align="center"><input type="submit" value="注册" onclick="Fromat1()"/></p>      
+     </form>
+     <form action="/returnLogin" method="get">
+     <p align="center"><input type="submit" value="返回" /> </p>
+     </form>
+</div>
+</body>
+
+</html>

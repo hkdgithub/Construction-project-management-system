@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>工程添加</title>
+		<style>
+			div{color: white;}
+			div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+                }
+		</style>
+		
+		<script>
+		<!--格式判断-->
+		</script>
+	</head>
+	<body background="image/背景.jpg">
+		<div align="center">
+		
+		<h3 align="center">工程添加界面</h3>
+		<br/>
+		<form action="/projectAdd" method="get">
+		 工程编号：       <input name="projectId" type="text" /><br />
+		 工程名称：       <input name="projectName" type="text" /><br />
+	        报建申请单位：<input name="applicantUnit" type="text"/><br />
+	        所有制性质：   <input name="natureOfOwnership" type="text"/><br />
+	        建设单位电话：<input name="unitPhone" type="text" /><br />    
+	        工程状态：       <input name="projectState" type="text"/><br />
+	     <input value="确定" type="submit" onclick="test()"/>  
+		</form>
+		
+		<p align="center">
+		<a th:href="@{'/returnprojectManage'}">返回项目管理界面</a>
+		</p>
+		</div>
+	</body>
+</html>

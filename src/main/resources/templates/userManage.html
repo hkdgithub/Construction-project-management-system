@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>用户管理</title>
+		<style>
+			#userManage{color: white;}
+			div{color: white;}
+			div{ 
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);
+   }
+		</style>
+	</head>
+	<body background="image/背景.jpg">
+	<div> 
+	 <h3 align="center">用户管理界面</h3>                                       
+	      <!-- 查询 -->
+	      <form action="/userQuery" method="get">
+		  <h1><input value="用户查询" type="submit"/></h1>
+		  </form>
+		  <!-- 添加 -->
+		  <h1><a th:href="@{'/userManageAdd'}">用户添加</a></h1>
+		  <!-- 修改 -->
+	      <h1><a th:href="@{'/userManageUpdate'}">用户修改</a></h1>
+	      <!-- 删除 -->
+	      <h1><a th:href="@{'/userManageDelete'}">用户删除</a></h1>
+	      <!-- 返回主界面 -->
+	      <h1><a th:href="@{'/returnMainWindow'}">返回主窗口</a></h1>
+     </div>
+	</body>
+</html>
